@@ -16,7 +16,7 @@ class Main extends React.Component {
                                 title={item.title}
                                 imgUrl={item.image_url}
                                 description={item.description}
-                                showModel={this.props.showModel}
+                                showModal={this.props.showModal}
                                 updateSelectedBeastData={this.props.updateSelectedBeastData}
                             />
                         )
