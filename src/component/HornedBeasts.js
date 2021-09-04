@@ -2,6 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
 
 
 
@@ -15,17 +16,19 @@ class HornedBeasts extends React.Component {
 
     incrementNumberOfPets = () => {
         this.setState({
-            numberOfPets : this.state.numberOfPets + 1  
-        })
-    }
+            numberOfPets : this.state.numberOfPets + 1 });
+            this.props.showModal();
+            this.props.updateSelectedBeastData(this.props.title,this.props.imgUrl,this.props.description);
+        }
     render() {
         return (
             <>
                 {/* <h2>{this.props.title}</h2>
     <img src={this.props.imageUrl}/>
     <p>{this.props.description}</p> */}
+    <Col>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={this.props.imageUrl} onClick={this.incrementNumberOfPets}/>
+                    <Card.Img variant="top" src={this.props.imgUrl} onClick={this.incrementNumberOfPets}/>
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text>
@@ -37,6 +40,7 @@ class HornedBeasts extends React.Component {
                         <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
                 </Card>
+                </Col>
             </>
         )
     }
