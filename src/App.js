@@ -108,8 +108,6 @@ description={this.state.description}
  )
 
 }
-
-
 }
 export default App;
 
