@@ -15,7 +15,7 @@ class App extends React.Component{
             show : false,
             title : '',
             imgUrl : '',
-            describtion : '',
+            description : '',
             data : Data,
 
         }
@@ -34,11 +34,11 @@ class App extends React.Component{
         })
     }
 
-    updateSelectedBeastData=(title,src,describtion) => {
+    updateSelectedBeastData=(title,src,description) => {
         this.setState({
             title: title,
             src: src,
-            describtion: describtion
+            description: description
         })
     }
 
@@ -58,7 +58,7 @@ show={this.state.show}
 handleClose={this.handleClose}
 title={this.state.title}
 src={this.state.src}
-describtion={this.state.describtion}
+description={this.state.description}
 />
 <Footer/>
 </>
@@ -70,10 +70,6 @@ describtion={this.state.describtion}
 
 }
 export default App;
-
-
-
-
 
 
 
