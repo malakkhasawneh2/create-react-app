@@ -1,29 +1,33 @@
 import React from 'react';
-import HornedBeast from './HornedBeast';
+import HornedBeasts from './HornedBeasts';
+import Data from './data.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Row from 'react-bootstrap/Row'
+
 
 class Main extends React.Component {
-
     render() {
-        // console.log(this.props);
         return (
-            <main>
-                <div className='card-container'>
-                    {this.props.Data.map(elm => {
+            <>
+                <Row xs={1} md={3} className="g-4">
+                    {this.props.Data.map((item) => {
                         return (
-                            <HornedBeast
-                                key={elm.title}
-                                name={elm.title}
-                                url={elm.image_url}
-                                alt={elm.keyword}
-                                description={elm.description}
-                                viewBeast={this.props.viewBeast}
+                            <HornedBeasts
+                                title={item.title}
+                                imgUrl={item.image_url}
+                                description={item.description}
+                                showModel={this.props.showModel}
+                                updateSelectedBeastData={this.props.updateSelectedBeastData}
                             />
                         )
                     })}
-                </div>
-            </main>
-        );
+
+
+
+
+
+                </Row>
+            </>)
     }
 }
-
-export default Main;
+export default Main

@@ -1,34 +1,30 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class SelectedBeast extends React.Component {
 
-
-    render(){
-        // console.log(this.props);
-        if(this.props.show){
-            return (
-                <div className='focused'>
-                    <Modal.Dialog>
-                        <Modal.Header>
-                            <Modal.Title>{this.props.details.target.name}</Modal.Title>
-                        </Modal.Header>
-                        
-                        <Card.Img variant="top" style={{ width: '14rem' }} src={this.props.details.target.src}/>
-    
-                        <Modal.Body>
-                            <p>{this.props.details.target.nonce}</p>
-                        </Modal.Body>
-                        <Button variant="secondary" onClick={this.props.closing}>Close</Button>
-                    </Modal.Dialog>
-                </div>
-            );
-        }else{
-            return null;
-        }
+    render() {
+        return (
+          <>
+            <Modal show={this.props.show} onHide={this.props.handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>{this.props.title}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <img width='200px' height='150px' src={this.props.src} alt={this.props.title} title={this.props.description}/>
+                <p>{this.props.description}</p>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={this.props.handleClose}>
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        );
+      }
     }
-}
-
-export default SelectedBeast;
+    
+    export default SelectedBeast;
