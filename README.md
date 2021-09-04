@@ -1,3 +1,19 @@
+
+
+
+Number and name of feature: map  (1)
+
+Estimate of time needed to complete: 2
+
+Start time:2:30
+
+Finish time: 4:40
+
+Actual time needed to complete: 2 hour
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
