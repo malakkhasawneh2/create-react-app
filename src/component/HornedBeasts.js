@@ -17,8 +17,8 @@ class HornedBeasts extends React.Component {
     incrementNumberOfPets = () => {
         this.setState({
             numberOfPets : this.state.numberOfPets + 1 });
-            this.props.showModel();
-            this.props.updateSelectedBeastData(this.props.title,this.props.src,this.props.description);
+            this.props.showModal();
+            this.props.updateSelectedBeastData(this.props.title,this.props.imgUrl,this.props.description);
         }
     render() {
         return (
