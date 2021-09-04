@@ -5,7 +5,7 @@ import Footer from './component/Footer';
 import Data from './component/data.json';
 import SelectedBeast from './component/SelectedBeast';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Form from "react-bootstrap/Form";
 
 
 class App extends React.Component{
@@ -17,6 +17,7 @@ class App extends React.Component{
             imgUrl : '',
             description : '',
             data : Data,
+            filterData: Data,
 
         }
     }
@@ -42,14 +43,55 @@ class App extends React.Component{
         })
     }
 
+    select = (event) =>{
+        let newArray;
+        if(event.target.value === 'all')
+        {
+             newArray = Data;
+        }
+        else
+        {
+             newArray = Data.filter(
+                (n) => n.horns === parseInt(event.target.value)
+
+            );
+            
+        }
+        this.setState({
+            filterData: newArray 
+        });
+
+
+
+    };
+
+    selectAll = () => {
+        this.setState({
+            filterData: Data
+        })
+}
+
 
 
 render(){
 return( 
 <>
 <Header/>
+<Form onChange={this.select}>
+            <Form.Group controlId="horns">
+              <Form.Select aria-label="Select beast horns number:">
+                <option>Select beast horns number:</option>
+                <option value="all">All</option>
+                <option value="1">One horn</option>
+                <option value="2">Two horns</option>
+                <option value="3">Three horns</option>
+                <option value="100">Wow</option>
+              </Form.Select>
+            </Form.Group>
+          </Form>
 <Main
-Data={this.state.data}
+Data={this.state. filterData}
+// Data={this.state.data}
 showModal={this.showModal}
 updateSelectedBeastData={this.updateSelectedBeastData}
 />
@@ -66,10 +108,7 @@ description={this.state.description}
  )
 
 }
-
-
 }
 export default App;
-
 
 
