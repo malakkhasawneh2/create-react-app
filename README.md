@@ -1,15 +1,15 @@
 
 
 
-Number and name of feature: (1)
+Number and name of feature: (2)
 
-Estimate of time needed to complete: 3
+Estimate of time needed to complete: 2
 
 Start time:2:30
 
-Finish time: 5:40
+Finish time: 4:40
 
-Actual time needed to complete: 3 hour
+Actual time needed to complete: 2 hour
 
 
 
